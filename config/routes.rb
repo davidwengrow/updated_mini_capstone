@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   # namespace :api do
   #   get "/photos" => "photos#index"
   # end
+  namespace :api do 
+    get "/one_product_url" => "products#one_product_method"
+  end
 end
