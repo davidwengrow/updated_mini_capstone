@@ -1,6 +1,27 @@
 class Api::ProductsController < ApplicationController
   def index
     @products = Product.all
+
+    # @products = @products.order(:id => :asc)
+
+    name_search = params["search"]
+    if name_search
+      @products = @products.where("name ILIKE ?", "%#{name_search}%")
+    end
+
+    if params["discount"]
+      @products = @products.where("price < ?", 10)
+    end
+    
+    if params["sort_order"] == "asc" && params["sort"] == "price"
+      @products = @products.order(:price => :asc)
+    elsif params["sort_order"] == "desc" && params["sort"] == "price"
+      @products = @products.order(:price => :desc)
+    else
+      @products = @products.order(:id => :asc)
+        
+    end
+
     render "index.json.jbuilder"
   end
   def show
@@ -10,8 +31,13 @@ class Api::ProductsController < ApplicationController
   def create
     @product = Product.new(name: params[:name], 
       price: params[:price],
-       image_url: params[:image_url],
-        description: params[:description])
+       # image_url: params[:image_url],
+        description: params[:description],
+          instock: params[:instock],
+            supplier_id: params[:supplier_id])
+              
+
+
     if @product.save
       render "show.json.jbuilder"
     else
@@ -22,8 +48,11 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price
-    @product.image_url = params[:image_url] || @product.image_url
+    # @product.image_url = params[:image_url] || @product.image_url
     @product.description = params[:description] || @product.description
+    @product.instock = params[:instock] || @product.instock
+    @product.supplier_id = params[:supplier_id] || @product.supplier_id
+
     if @product.save
       render "show.json.jbuilder"
     else
