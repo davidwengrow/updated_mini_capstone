@@ -5,13 +5,13 @@ class Product < ApplicationRecord
   validates :description, length: { minimum: 2 }
   validates :description, length: { maximum: 500 }
 
-  def supplier
-    Supplier.find_by(id: supplier_id)
-  end
+  # def supplier
+  belongs_to :supplier
+  # end
 
-  def images
-    Image.where(product_id: id)
-  end
+  # def images
+  has_many :images
+  # end
 
   def friendly_updated_at
     updated_at.strftime("%B %e, %Y")

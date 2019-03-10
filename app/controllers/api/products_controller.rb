@@ -35,7 +35,8 @@ class Api::ProductsController < ApplicationController
         description: params[:description],
           instock: params[:instock],
             supplier_id: params[:supplier_id])
-              
+
+
 
 
     if @product.save
@@ -52,6 +53,7 @@ class Api::ProductsController < ApplicationController
     @product.description = params[:description] || @product.description
     @product.instock = params[:instock] || @product.instock
     @product.supplier_id = params[:supplier_id] || @product.supplier_id
+    
 
     if @product.save
       render "show.json.jbuilder"

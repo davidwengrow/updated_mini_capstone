@@ -16,9 +16,14 @@
 # supplier2 = Supplier.new({name: "Squid Man", email: "squidman@aol.com", phone_number: "666-66-6666"})
 # supplier2.save
 
-images = Image.new({url: "http://www.freshfishmumbai.com/media/catalog/product/cache/1/thumbnail/600x/17f82f742ffe127f42dca9de82fb58b1/s/q/squids.jpg", product_id: 2})
-images.save
-images = Image.new(url:"http://www.irishnews.com/picturesarchive/irishnews/irishnews/2017/06/20/190012629-54e87f62-ddeb-40fa-a10e-26300edfc9a0.jpg", product_id: 2)
-images.save
-images = Image.new(url: "https://www.gotscience.org/wp-content/uploads/2018/04/squid_shell-copy.png", product_id: 2)
-images.save
+# images = Image.new({url: "http://www.freshfishmumbai.com/media/catalog/product/cache/1/thumbnail/600x/17f82f742ffe127f42dca9de82fb58b1/s/q/squids.jpg", product_id: 3})
+# images.save
+# images = Image.new(url:"http://www.irishnews.com/picturesarchive/irishnews/irishnews/2017/06/20/190012629-54e87f62-ddeb-40fa-a10e-26300edfc9a0.jpg", product_id: 3)
+# images.save
+# images = Image.new(url: "https://www.gotscience.org/wp-content/uploads/2018/04/squid_shell-copy.png", product_id: 3)
+# images.save
+
+# Image.create!(url:"https://s-i.huffpost.com/gen/2583438/images/n-JUPITER-ASCENDING-628x314.jpg", product_id:13)
+Image.create!(url:"https://images-na.ssl-images-amazon.com/images/I/51pZgok0YnL._SY445_.jpg", product_id:8)
+Image.create!(url:"https://upload.wikimedia.org/wikipedia/en/thumb/0/04/DragonBladefilm.jpg/220px-DragonBladefilm.jpg", product_id:10 )
+Image.create!(url:"https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Butterflyeffect_poster.jpg/220px-Butterflyeffect_poster.jpg", product_id:12)

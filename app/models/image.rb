@@ -1,3 +1,3 @@
 class Image < ApplicationRecord
-  # Product.where(images: product_id)
+  belongs_to :product
 end
