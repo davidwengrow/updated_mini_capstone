@@ -11,3 +11,4 @@ json.formatted_total number_to_currency(product.total)
 json.instock product.instock
 json.supplier_id  product.supplier
 json.images product.images
+json.
