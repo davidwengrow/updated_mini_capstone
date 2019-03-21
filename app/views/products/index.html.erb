@@ -1,0 +1,17 @@
+<% @products.each do |product| %>
+<h2><%= product.id %></h2>
+  
+<h2><%= product.name %></h2>
+<h2><%= product.price %></h2>
+<h2><%= number_to_currency(product.price) %></h2>
+<h2><%= product.description %></h2>
+</h2><% product.friendly_updated_at %></h2>
+<h2><%= product.is_discounted? %></h2>
+<h2><%= number_to_currency(product.tax) %></h2>
+<h2><%= number_to_currency(product.total) %></h2>
+<h2><%= product.instock %></h2>
+<h2><%= product.supplier %></h2>
+<h2><%= product.images %></h2>
+<h2><%= product.categories %></h2>
+<a href="/products/<%= product.id %>">More info</a>
+<% end %>

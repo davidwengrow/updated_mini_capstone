@@ -1,14 +1,22 @@
 json.id product.id
 json.name product.name
 json.price product.price
-json.formatted_price number_to_currency(product.price)
 # json.image_url product.image_url
+json.images product.images
 json.description product.description
-json.friendly_updated_at product.friendly_updated_at
-json.discount product.is_discounted
+
+json.is_discounted product.is_discounted?
+json.tax product.tax
+json.total product.total
+
+json.supplier product.supplier
+# json.supplier do
+#   json.id product.supplier.id
+#   json.name product.supplier.name
+# end
+
+json.categories product.categories
+
+json.formatted_price number_to_currency(product.price)
 json.formatted_tax number_to_currency(product.tax)
 json.formatted_total number_to_currency(product.total)
-json.instock product.instock
-json.supplier_id  product.supplier
-json.images product.images
-json.

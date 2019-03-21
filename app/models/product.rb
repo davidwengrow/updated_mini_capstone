@@ -12,11 +12,20 @@ class Product < ApplicationRecord
   # def images
   has_many :images
   # end
-
+  has_many :orders, through: :carted_products
+  has_many :category_products
+  has_many :carted_products
+  def categories
+    result = []
+    category_products.each do |category_product|
+      result << category_product.category
+    end
+    return result
+  end
   def friendly_updated_at
     updated_at.strftime("%B %e, %Y")
   end
-  def is_discounted
+  def is_discounted?
     price <= 10
   end
   def tax

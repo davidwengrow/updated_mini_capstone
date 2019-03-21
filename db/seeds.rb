@@ -10,6 +10,7 @@
 # movies.save
 # food1 = Product.new({name: "Squid Tentacles", price: 1000, image_url: "https://static01.nyt.com/newsgraphics/2014/03/31/Eat-squid/assets/06-eat_squid-custom.jpg", description: "Superb Squishy Squid Tentacle Salad"})
 # food1.save
+# Product.create!({name: "The Beast", price: 4, description: "WTF", instock: "in_stock", user_id: 3, supplier_id: 1})
 
 # supplier1 = Supplier.new({name: "How Did This Get Made", email: "howdidthisgetmade@gmail.com", phone_number: "773-999-0000"})
 # supplier1.save
@@ -24,6 +25,10 @@
 # images.save
 
 # Image.create!(url:"https://s-i.huffpost.com/gen/2583438/images/n-JUPITER-ASCENDING-628x314.jpg", product_id:13)
-Image.create!(url:"https://images-na.ssl-images-amazon.com/images/I/51pZgok0YnL._SY445_.jpg", product_id:8)
-Image.create!(url:"https://upload.wikimedia.org/wikipedia/en/thumb/0/04/DragonBladefilm.jpg/220px-DragonBladefilm.jpg", product_id:10 )
-Image.create!(url:"https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Butterflyeffect_poster.jpg/220px-Butterflyeffect_poster.jpg", product_id:12)
+# Image.create!(url:"https://images-na.ssl-images-amazon.com/images/I/51pZgok0YnL._SY445_.jpg", product_id:8)
+# Image.create!(url:"https://upload.wikimedia.org/wikipedia/en/thumb/0/04/DragonBladefilm.jpg/220px-DragonBladefilm.jpg", product_id:10 )
+# Image.create!(url:"https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Butterflyeffect_poster.jpg/220px-Butterflyeffect_poster.jpg", product_id:12)
+
+Category.create!([{name: "squids"}])
+  # Category.create!([name: "movies"])
+  
