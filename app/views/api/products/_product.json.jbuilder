@@ -20,3 +20,4 @@ json.categories product.categories
 json.formatted_price number_to_currency(product.price)
 json.formatted_tax number_to_currency(product.tax)
 json.formatted_total number_to_currency(product.total)
+json.primary_image product.primary_image

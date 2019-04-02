@@ -34,4 +34,13 @@ class Product < ApplicationRecord
   def total
     price + tax
   end
+
+  def primary_image
+    if images.length > 0
+      images[0].url
+    else
+      "https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png"
+    end
+    
+  end
 end
